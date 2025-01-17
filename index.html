@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Facts - Squid Game Theme</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d0d0d; /* Very dark background */
+            color: #e5e5e5; /* Light gray text for contrast */
+            text-align: center;
+            padding: 20px;
+            background-image: url('background-pattern.png'); /* Use a pattern or texture from Figma */
+            background-size: cover;
+            /* background-position: center; */
+            background-repeat: no-repeat;
+        }
+
+        #app {
+            max-width: 600px;
+            margin: auto;
+            border: 2px solid #ff4c4c; /* Bright red border */
+            border-radius: 10px;
+            padding: 20px;
+            background-color: rgba(26, 26, 26, 0.9); /* Slightly transparent dark background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ff4c4c; /* Bright red for headings */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4c4c; /* Bright red button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #cc0000; /* Darker red on hover */
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        #factDisplay {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Facts About Planet Earth</h1>
+        <button id="factButton">Show a Random Fact</button>
+        <div id="factDisplay"></div>
+    </div>
+    <script>
+        const earthFacts = [
+            {
+                "fact": "Earth's Composition",
+                "description": "Earth is composed of several layers: the crust, mantle, outer core, and inner core."
+            },
+            {
+                "fact": "Water Coverage",
+                "description": "Approximately 71% of Earth's surface is covered by water, primarily in oceans."
+            },
+            {
+                "fact": "Atmosphere",
+                "description": "Earth has a unique atmosphere composed of 78% nitrogen, 21% oxygen, and trace amounts of other gases, which supports life."
+            },
+            {
+                "fact": "Tectonic Plates",
+                "description": "The Earth's crust is divided into tectonic plates that float on the semi-fluid asthenosphere, causing earthquakes and volcanic activity."
+            },
+            {
+                "fact": "Seasons",
+                "description": "Earth's axial tilt of approximately 23.5 degrees is responsible for the changing seasons as it orbits the Sun."
+            },
+            {
+                "fact": "Rotation",
+                "description": "Earth rotates on its axis once every 24 hours, resulting in day and night."
+            },
+            {
+                "fact": "Orbit",
+                "description": "Earth orbits the Sun at an average distance of about 93 million miles (150 million kilometers) and takes approximately 365.25 days to complete one orbit, defining a year."
+            },
+            {
+                "fact": "Natural Satellite",
+                "description": "Earth has one natural satellite, the Moon, which influences tides and stabilizes the planet's axial tilt."
+            },
+            {
+                "fact": "Biodiversity",
+                "description": "Earth is home to a vast diversity of organisms, ranging from microscopic bacteria to large mammals, making it the only known planet to support life."
+            },
+            {
+                "fact": "Climate Zones",
+                "description": "Earth has various climate zones, including tropical, temperate, and polar regions, each supporting different ecosystems."
+            }
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * earthFacts.length);
+            const fact = earthFacts[randomIndex];
+            document.getElementById('factDisplay').innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
+        });
+    </script>
+</body>
+</html>
